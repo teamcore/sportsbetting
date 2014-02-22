@@ -26,13 +26,16 @@ namespace Smart.Betting.Web
 
             //angular
             string angularjs = "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js";
-            bundles.Add(new ScriptBundle("~/bundles/angular", angularjs).Include("~/Scripts/angular*"));
+            bundles.Add(new ScriptBundle("~/bundles/angular", angularjs).Include("~/Scripts/angular.js", "~/Scripts/angular-route.js"));
 
             bundles.Add(new StyleBundle("~/Content/angular", "").Include("~/Content/angular*"));
 
             //toastr
             bundles.Add(new ScriptBundle("~/bundles/toastr").Include("~/Scripts/toastr.js"));
             bundles.Add(new StyleBundle("~/Content/toastr").Include("~/Content/toastr.css"));
+
+            //custom js
+            bundles.Add(new ScriptBundle("~/bundles/custom").Include("~/Scripts/custom/app/smart.betting*", "~/Scripts/custom/controllers/smart.betting*"));
         }
     }
 }
